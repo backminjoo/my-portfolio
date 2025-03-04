@@ -1,32 +1,48 @@
 import { Container, Row, Col, Nav, Tab } from 'react-bootstrap'
 import { ProjectCards } from './ProjectCards'
-// import colorSharp2 from ''
+import colorSharp2 from '../assets/img/color-sharp2.png'
+// import projImg1 from '../assets/img/project-img1.png'
+// import projImg2 from '../assets/img/project-img2.png'
+// import projImg3 from '../assets/img/project-img3.png'
+import projImg1 from '../assets/img/1proJ.png'
+import projImg2 from '../assets/img/2proJ.png'
+import projImg3 from '../assets/img/3proJ.png'
 export const Project = () => {
     const projects = [
         {
-            title: 'project',
-            description: 'description',
-            imgUrl: 'Img',
+            title: '게임&커뮤니티',
+            description: (
+                <span>
+                    Java, JavaScript, HTML/CSS 기반 <br></br>웹 게임 제작 및
+                    게임 커뮤니티 사이트로 게임 사이트
+                </span>
+            ),
+            imgUrl: projImg1,
         },
         {
             title: 'project',
             description: 'description',
-            imgUrl: 'Img',
+            imgUrl: projImg2,
         },
         {
             title: 'project',
             description: 'description',
-            imgUrl: 'Img',
+            imgUrl: projImg3,
         },
         {
             title: 'project',
             description: 'description',
-            imgUrl: 'Img',
+            imgUrl: projImg1,
         },
         {
             title: 'project',
             description: 'description',
-            imgUrl: 'Img',
+            imgUrl: projImg1,
+        },
+        {
+            title: 'project',
+            description: 'description',
+            imgUrl: projImg1,
         },
     ]
     return (
@@ -43,18 +59,18 @@ export const Project = () => {
                             eveniet eius officiis?
                         </p>
                         <Tab.Container
-                            id="projects=tabs"
+                            id="projects-tabs"
                             defaultActiveKey="first"
                         >
                             <Nav variant="pills" defaultActiveKey="/home">
                                 <Nav.Item>
-                                    <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                                    <Nav.Link eventKey="first">ALL</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                                    <Nav.Link eventKey="second">Team</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                                    <Nav.Link eventKey="third">Single</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                             <Tab.Content>
@@ -81,7 +97,7 @@ export const Project = () => {
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right"></img>
+            <img className="background-image-right" src={colorSharp2}></img>
         </section>
     )
 }

@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
+import logo from '../assets/img/logo.svg'
+import navIcon1 from '../assets/img/nav-icon1.svg'
+import navIcon2 from '../assets/img/nav-icon2.svg'
+import navIcon3 from '../assets/img/nav-icon3.svg'
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home')
@@ -25,10 +29,7 @@ export const NavBar = () => {
     return (
         <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
             <Container>
-                <Navbar.Brand href="#home">
-                    {/* <img src={''} alt="logo" /> */}
-                    PortFolio
-                </Navbar.Brand>
+                {/* <Navbar.Brand href="#home">PortFolio</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
                     <span className="navbar-toggler-icon"></span>
                 </Navbar.Toggle>
@@ -67,32 +68,28 @@ export const NavBar = () => {
                         >
                             Project
                         </Nav.Link>
-                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">
-                                Action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">
-                                Something
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
+                        <Nav.Link
+                            href="#education"
+                            className={
+                                activeLink === 'education'
+                                    ? 'active navbar-link'
+                                    : 'navbar-link'
+                            }
+                            onClick={() => onUpdateActiveLink('education')}
+                        >
+                            education
+                        </Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
                             <a href="#">
-                                <img src={''} alt=""></img>
+                                <img src={navIcon1} alt=""></img>
                             </a>
                             <a href="#">
-                                <img src={''} alt=""></img>
+                                <img src={navIcon2} alt=""></img>
                             </a>
                             <a href="#">
-                                <img src={''} alt=""></img>
+                                <img src={navIcon3} alt=""></img>
                             </a>
                         </div>
                         <button

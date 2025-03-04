@@ -1,17 +1,21 @@
 import logo from './logo.svg'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavBar } from './components/NavBar'
 import { Banner } from './components/Banner'
 import { Skills } from './components/Skills'
 import { Project } from './components/Project'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Education } from './components/Education'
+import { Footer } from './components/Footer'
 function App() {
     return (
         <div className="App">
             <NavBar />
             <Banner />
             <Skills />
-            <Project></Project>
+            <Project />
+            <Education />
+            <Footer />
         </div>
     )
 }

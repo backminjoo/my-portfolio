@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArrowRightCircle } from 'react-bootstrap-icons'
+import headerImg from '../assets/img/header-img.svg'
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0) // 현재 몇번째 단어를 타이핑 중인지 저장
     const [isDeleting, setIsDeleting] = useState(false) // 글자를 추가하는 중인지 삭제하는 중인지
-    const toRotate = ['Web Developer', 'Web Designer', 'UI/UX Designer'] // 번갈아가면서 출력할 문자열 배열
+    const toRotate = [
+        '풀스택 웹 개발자',
+        '포기하지 않고 책임감있는',
+        '사용자를 생각하는',
+    ] // 번갈아가면서 출력할 문자열 배열
     const [text, setText] = useState('') // 현재 화면에 출력되는 텍스트 상태
     const [delta, setDelta] = useState(300 - Math.random() * 100) // 다음 글자가 나타날 시간 간격
     const period = 2000 // 한 단어를 다 입력하고 대기하는 시간
@@ -50,17 +55,16 @@ export const Banner = () => {
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my portfolio</span>
                         <h1>
-                            {`Hi I'm a webdecoded`}{' '}
-                            <span className="wrap">web developer</span>
+                            {`안녕하세요 `}
+                            <br></br>
+                            <span className="txt-rotate">
+                                <span className="wrap">백민주입니다.</span>
+                            </span>
                         </h1>
                         <p>{text}</p>
-                        <button onClick={() => console.log('connect')}>
-                            Let's connect{' '}
-                            <ArrowRightCircle size={25}></ArrowRightCircle>
-                        </button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={''} alt="header Img" />
+                        <img src={headerImg} alt="header Img" />
                     </Col>
                 </Row>
             </Container>
