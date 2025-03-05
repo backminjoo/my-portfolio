@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
-import logo from '../assets/img/logo.svg'
-import navIcon1 from '../assets/img/nav-icon1.svg'
-import navIcon2 from '../assets/img/nav-icon2.svg'
+// import navIcon1 from '../assets/img/nav-icon1.svg'
+import navIcon1 from '../assets/img/gitlogo.webp'
+import navIcon2 from '../assets/img/tistory.png'
+// import navIcon2 from '../assets/img/nav-icon2.svg'
 import navIcon3 from '../assets/img/nav-icon3.svg'
 
 export const NavBar = () => {
@@ -79,25 +80,36 @@ export const NavBar = () => {
                         >
                             education
                         </Nav.Link>
+                        {/* <Nav.Link
+                            href="#activities"
+                            className={
+                                activeLink === 'activities'
+                                    ? 'active navbar-link'
+                                    : 'navbar-link'
+                            }
+                            onClick={() => onUpdateActiveLink('activities')}
+                        >
+                            activities
+                        </Nav.Link> */}
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="#">
+                            <a href="https://github.com/backminjoo">
                                 <img src={navIcon1} alt=""></img>
                             </a>
-                            <a href="#">
+                            <a href="https://qoralswn1205.tistory.com/">
                                 <img src={navIcon2} alt=""></img>
                             </a>
-                            <a href="#">
+                            {/* <a href="#">
                                 <img src={navIcon3} alt=""></img>
-                            </a>
+                            </a> */}
                         </div>
-                        <button
+                        {/* <button
                             className="vvd"
                             onClick={() => console.log('connect')}
                         >
                             <span>Let's Connect</span>
-                        </button>
+                        </button> */}
                     </span>
                 </Navbar.Collapse>
             </Container>

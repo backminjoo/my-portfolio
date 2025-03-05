@@ -159,7 +159,8 @@ span.navbar-text {
 }
 
 .social-icon a img {
-  width: 40%;
+  /* width: 40%; */
+  width: 100%;
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
@@ -416,7 +417,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  margin: 14px auto 30px auto;
+  margin: 14px auto 80px auto;
   text-align: center;
   width: 56%;
 }
@@ -425,9 +426,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
-  background-color: rgb(255 255 255 / 10%);
+  background-color: #2a1c42b0;
   overflow: hidden;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .project .nav.nav-pills .nav-item {
@@ -454,8 +455,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: absolute;
   width: 0;
   height: 100%;
-  /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
-  background-color: #655b5b94;
+  background-color: #673AB7;
   top: 0;
   left: 0;
   z-index: -1;
@@ -468,20 +468,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .project .nav.nav-pills .nav-link.active {
   border: 1px solid rgba(255, 255, 255, 1);
+  font-weight: bold;
 }
 
 .nav-link#projects-tabs-tab-first {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
   border-radius: 55px 0px 0px 55px;
 }
 
 .nav-link#projects-tabs-tab-second {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
 }
 
 .nav-link#projects-tabs-tab-third {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
   border-radius: 0 55px 55px 0;
 }
 
@@ -550,6 +550,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+.custom-github-button {
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+}
+
+.custom-github-button:hover {
+  background-color: rgba(55, 55, 55, 0.556);
+}
+
 /* Education Css */
 .education {
   padding: 0 0 50px 0;
@@ -590,6 +607,32 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .education-bx-detail li {
   color: #a6a6a6 !important;
+}
+
+/* Activities Css */
+.activities {
+  padding: 0 0 50px 0;
+  position: relative;
+}
+
+.activities-bx {
+  background: #151515;
+  border-radius: 64px;
+  padding: 60px 50px;
+}
+
+.activities h2 {
+  text-align: center !important;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.activities-bx-detail {
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 /* footer Css */
