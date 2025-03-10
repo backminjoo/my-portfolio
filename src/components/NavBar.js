@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import {
+    Navbar,
+    Container,
+    Nav,
+    OverlayTrigger,
+    Tooltip,
+} from 'react-bootstrap'
 // import navIcon1 from '../assets/img/nav-icon1.svg'
 import navIcon1 from '../assets/img/gitlogo.webp'
 import navIcon2 from '../assets/img/tistory.png'
 // import navIcon2 from '../assets/img/nav-icon2.svg'
-import navIcon3 from '../assets/img/nav-icon3.svg'
+// import navIcon3 from '../assets/img/nav-icon3.svg'
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home')
     const [scrolled, setScrolled] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleMenu = () => setIsOpen(!isOpen)
 
     useEffect(() => {
         const onScroll = () => {
@@ -31,10 +39,13 @@ export const NavBar = () => {
         <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
             <Container>
                 {/* <Navbar.Brand href="#home">PortFolio</Navbar.Brand> */}
-                <Navbar.Toggle aria-controls="basic-navbar-nav">
+                <Navbar.Toggle
+                    aria-controls="basic-navbar-nav"
+                    onClick={toggleMenu}
+                >
                     <span className="navbar-toggler-icon"></span>
                 </Navbar.Toggle>
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav" in={isOpen}>
                     <Nav className="me-auto">
                         <Nav.Link
                             href="#home"
@@ -94,22 +105,39 @@ export const NavBar = () => {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://github.com/backminjoo">
-                                <img src={navIcon1} alt=""></img>
+                            <a
+                                href="https://github.com/backminjoo"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <OverlayTrigger
+                                    placement="top"
+                                    overlay={
+                                        <Tooltip id="github-tooltip">
+                                            Github로 이동
+                                        </Tooltip>
+                                    }
+                                >
+                                    <img src={navIcon1} alt="GitHub 아이콘" />
+                                </OverlayTrigger>
                             </a>
-                            <a href="https://qoralswn1205.tistory.com/">
-                                <img src={navIcon2} alt=""></img>
+                            <a
+                                href="https://qoralswn1205.tistory.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <OverlayTrigger
+                                    placement="top"
+                                    overlay={
+                                        <Tooltip id="tistory-tooltip">
+                                            Tistory 이동
+                                        </Tooltip>
+                                    }
+                                >
+                                    <img src={navIcon2} alt="Tistory 아이콘" />
+                                </OverlayTrigger>
                             </a>
-                            {/* <a href="#">
-                                <img src={navIcon3} alt=""></img>
-                            </a> */}
                         </div>
-                        {/* <button
-                            className="vvd"
-                            onClick={() => console.log('connect')}
-                        >
-                            <span>Let's Connect</span>
-                        </button> */}
                     </span>
                 </Navbar.Collapse>
             </Container>

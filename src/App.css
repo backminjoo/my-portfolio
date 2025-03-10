@@ -25,6 +25,8 @@
 }
 
 html {
+  /* 스크롤 여백 제거때문에 추가함 나중에 필요없으면 삭제 */
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
 }
@@ -80,6 +82,34 @@ button {
   }
 }
 
+@media(max-width: 768px) {
+  main .container {
+    /* padding: 0 20px; */
+  }
+
+  .navbar-collapse {
+    margin-top: 40px;
+  }
+
+  .education-bx-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-bx-detail>div {
+    width: 100% !important;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-size: 10px;
+  }
+
+  .footer-txt {
+    font-size: 80px !important;
+  }
+}
+
 p.success {
   color: green;
 }
@@ -96,6 +126,7 @@ nav.navbar {
   z-index: 9999;
   transition: 0.32s ease-in-out;
 }
+
 
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -649,6 +680,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 60px 50px;
   /* margin-top: -60px; */
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-bx>h1 {
@@ -686,6 +721,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 120px;
   font-weight: bold;
   color: #ffffff4f;
+  white-space: normal;
+  /* 텍스트 줄바꿈 허용 */
+  word-wrap: break-word;
+  /* 긴 단어가 넘어가지 않도록 처리 */
 }
 
 @keyframes float {
